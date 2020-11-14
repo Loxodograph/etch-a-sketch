@@ -7,6 +7,7 @@ container = document.querySelector('.container')
 var reset = document.getElementById("reset"); 
 var submit = document.getElementById("submit"); 
 let gridWidth = 32;
+let gridSize = 32;
 var sheet = document.createElement('style')
 sheet.innerHTML = `.container {grid-template-columns: repeat(${gridWidth}, 1fr); grid-template-rows: repeat(${gridWidth}, 1fr)}`
 document.body.appendChild(sheet);
@@ -56,6 +57,7 @@ reset.onclick = function() {
     gridBoxes.forEach(gridBox => gridBox.style.background = '#547AA5');
     deleteGrid();
     createGrid(32);
+    sheet.innerHTML =`.container {grid-template-columns: repeat(${gridWidth}, 1fr); grid-template-rows: repeat(${gridWidth}, 1fr)}`;
     gridBoxes.forEach(gridBox => gridBox.onmouseover = function(){ gridBox.style.background = `${color}`});
     slider.value = 32;
     output.innerHTML = slider.value + " x " + slider.value;
@@ -69,6 +71,7 @@ slider.oninput = function() {
 
 submit.onclick = function() {
     deleteGrid();
+    
     createGrid(gridSize);
     gridWidth = gridSize;
     sheet.innerHTML =`.container {grid-template-columns: repeat(${gridWidth}, 1fr); grid-template-rows: repeat(${gridWidth}, 1fr)}`;
