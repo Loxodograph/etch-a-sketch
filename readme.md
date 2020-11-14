@@ -1,0 +1,1 @@
+I learned a bit more about JS. I learned some about DOM Manipulation. Not great yet. Lets see how this goes.
